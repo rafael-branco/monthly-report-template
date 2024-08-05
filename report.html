@@ -11,12 +11,11 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <style>
-
-        html,body{
+        html, body {
             margin: 0;
         }
 
-        .small-logo{
+        .small-logo {
             width: 80px;
             height: 80px;
             position: absolute;
@@ -32,19 +31,19 @@
             font-family: 'Roboto';
         }
 
-        .main-content{
+        .main-content {
             display: flex;
             position: relative;
             width: 100%;
             height: 100%;
         }
 
-        .info-box{
+        .info-box {
             padding: 30px 50px;
             width: 59.5%;
         }
 
-        .background-box{
+        .background-box {
             width: 40.5%;
         }
 
@@ -70,15 +69,17 @@
             margin-bottom: 20px;
         }
 
-        .metric-box-info{
+        .metric-box-info {
             width: 300px;
         }
-        .metric-box p{
+
+        .metric-box p {
             margin: 0;
             width: fit-content;
             font-size: 20px;
         }
-        .metric-box h2{
+
+        .metric-box h2 {
             margin-top: 0;
             margin-bottom: 5px;
             margin-left: 0;
@@ -86,7 +87,7 @@
             font-size: 40px;
         }
 
-        .metric-box-image{
+        .metric-box-image {
             width: 80px;
             text-align: center;
             margin-right: 20px;
@@ -101,7 +102,7 @@
             text-align: center;
         }
 
-        .orange-background{
+        .orange-background {
             margin-top: 6px !important;
             background-color: #F37421;
             padding: 3px;
@@ -114,13 +115,13 @@
         <div class="info-box">
             <img class="full-logo" src="images/full_logo.png" alt="Seu Consumo">
             <h1>Relatório Mensal de<br>Sustentabilidade</h1>
-            <h3><span id="month">Janeiro</span> <span id="year">2024</span></h3>
+            <h3>{{ month }} {{ year }}</h3>
             <div class="metric-box">
                 <div class="metric-box-image metric-box-image-water-leak1">
                     <img src="images/water-leak1.png">
                 </div>
                 <div class="metric-box-info">
-                    <h2>254 de 15.000</h2>
+                    <h2>{{ units_with_leaking }} de {{ total_units }}</h2>
                     <p>unidades que apresentaram vazamento</p>
                 </div>
             </div>
@@ -129,7 +130,7 @@
                     <img src="images/clock.png">
                 </div>
                 <div class="metric-box-info">
-                    <h2>3,5 dias</h2>
+                    <h2>{{ days }} dias</h2>
                     <p>foi o tempo médio de respostas para os moradores promoverem o reparo dos vazamentos.</p>
                 </div>
             </div>
@@ -138,7 +139,7 @@
                     <img src="images/water-leak2.png">
                 </div>
                 <div class="metric-box-info">
-                    <h2>38,64 L/H</h2>
+                    <h2>{{ avg_water_leaking }} L/H</h2>
                     <p>foi a vazão média dos vazamentos que ocorreram.</p>
                 </div>
             </div>
@@ -148,8 +149,8 @@
                 </div>
                 <div class="metric-box-info">
                     <h2>Água</h2>
-                    <p>Economizado: 9346,096 m³</p>
-                    <p class="orange-background">Desperdiçado: 1873,05 m³</p>
+                    <p>Economizado: {{ water_saved }} m³</p>
+                    <p class="orange-background">Desperdiçado: {{ water_wasted }} m³</p>
                 </div>
             </div>
             <div class="metric-box">
@@ -158,8 +159,8 @@
                 </div>
                 <div class="metric-box-info">
                     <h2>CO²</h2>
-                    <p>Economizado: 4673,05 m³</p>
-                    <p class="orange-background">Desperdiçado: 922,22 m³</p>
+                    <p>Economizado: {{ co2_saved }} m³</p>
+                    <p class="orange-background">Desperdiçado: {{ co2_wasted }} m³</p>
                 </div>
             </div>
             <div class="metric-box">
@@ -168,8 +169,8 @@
                 </div>
                 <div class="metric-box-info">
                     <h2>Valor</h2>
-                    <p>Economizado: R$ 98.543,02</p>
-                    <p class="orange-background">Desperdiçado: R$ 18.512,52</p>
+                    <p>Economizado: R$ {{ money_saved }}</p>
+                    <p class="orange-background">Desperdiçado: R$ {{ money_wasted }}</p>
                 </div>
             </div>
         </div>
